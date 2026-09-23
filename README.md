@@ -11,6 +11,18 @@
 ## 文档
 
 - [公开医学资料分析](docs/medical-data-analysis.md)：数据盘点、证据层级、质量问题和下一步建议。
+- [健康科普更新与咨询流程](docs/health-advisor-workflow.md)：资料更新、检索、脚本和发布前核验流程。
+
+## 本地检索
+
+构建本地索引（默认读取 `/Users/mac/Documents/phatxm/meddata`）：
+
+```bash
+python3 tools/build_index.py
+python3 tools/search_index.py 睡眠 褪黑素
+```
+
+索引位于 `.local/health_rag.sqlite3`，不会提交到 Git；原始文件位置、行号和文件哈希会保留在索引中，方便追溯。
 
 ## 数据原则
 
