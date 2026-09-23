@@ -53,13 +53,19 @@ def records(path: Path):
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--source", type=Path, default=Path("/Users/mac/Documents/phatxm/meddata"))
+    ap.add_argument(
+        "--source",
+        type=Path,
+        default=Path("data/example"),
+        help="directory containing source files (default: data/example)",
+    )
     ap.add_argument("--db", type=Path, default=Path(".local/health_rag.sqlite3"))
     args = ap.parse_args()
     args.db.parent.mkdir(parents=True, exist_ok=True)
     con = sqlite3.connect(args.db)
     con.executescript("""
       PRAGMA journal_mode=WAL;
+      DROP TABLE IF EXISTS chunks_fts;
       DROP TABLE IF EXISTS documents;
       DROP TABLE IF EXISTS chunks;
       CREATE TABLE documents(
