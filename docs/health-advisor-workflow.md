@@ -19,10 +19,10 @@
 
 ## 持续更新
 
-当前本地索引由 `tools/build_index.py` 从 `phatxm/meddata` 重建。新增或更新 CSV、TSV、JSON、Markdown 后重新运行即可；索引保存文件哈希，后续可据此扩展增量更新。检索：
+当前本地索引由 `tools/build_index.py` 从示例目录或用户指定的数据目录重建。新增或更新 CSV、TSV、JSON、Markdown 后重新运行即可；索引保存文件哈希，后续可据此扩展增量更新。检索：
 
 ```bash
-python3 tools/build_index.py
+python3 tools/build_index.py --source /path/to/data
 python3 tools/search_index.py 癌症 草药 相互作用
 python3 tools/consult.py 癌症期间能不能吃补充剂
 ```
