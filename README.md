@@ -20,6 +20,7 @@
 ```bash
 python3 tools/build_index.py
 python3 tools/search_index.py 睡眠 褪黑素
+python3 tools/consult.py 睡眠和褪黑素安全吗
 ```
 
 索引位于 `.local/health_rag.sqlite3`，不会提交到 Git；原始文件位置、行号和文件哈希会保留在索引中，方便追溯。

@@ -24,6 +24,7 @@
 ```bash
 python3 tools/build_index.py
 python3 tools/search_index.py 癌症 草药 相互作用
+python3 tools/consult.py 癌症期间能不能吃补充剂
 ```
 
 第一版是可追溯的 SQLite 全文 RAG 检索，不依赖云端模型或外部数据库。后续若需要语义检索，再在相同 `documents/chunks` 表上增加本地 embedding 和向量索引。
